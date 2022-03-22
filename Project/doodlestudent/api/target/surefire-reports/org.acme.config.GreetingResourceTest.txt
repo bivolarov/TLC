@@ -1,0 +1,17 @@
+-------------------------------------------------------------------------------
+Test set: org.acme.config.GreetingResourceTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 15.819 s <<< FAILURE! - in org.acme.config.GreetingResourceTest
+testHelloEndpoint  Time elapsed: 0.056 s  <<< ERROR!
+java.lang.RuntimeException: java.lang.RuntimeException: Failed to start quarkus
+Caused by: java.lang.RuntimeException: Failed to start quarkus
+Caused by: org.flywaydb.core.internal.exception.FlywaySqlException: 
+
+Unable to obtain connection from database: null,  message from server: "Host '172.25.0.1' is not allowed to connect to this MySQL server"
+-----------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : HY000
+Error Code : 1130
+Message    : null,  message from server: "Host '172.25.0.1' is not allowed to connect to this MySQL server"
+
+Caused by: java.sql.SQLException: null,  message from server: "Host '172.25.0.1' is not allowed to connect to this MySQL server"
+

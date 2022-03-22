@@ -1,0 +1,39 @@
+version: '3.2'
+services:
+    reverseproxy:
+        image: jwilder/nginx-proxy
+        ports:
+            - 80:80
+        volumes:
+            - /var/run/docker.sock:/tmp/docker.sock:ro
+        environment:
+          - DEFAULT_HOST=opencvapp.local # adding this to the nginx-proxy service to make it a default "catch-all" server.
+
+
+    opencvapp1:
+        depends_on:
+            - reverseproxy
+        build: .
+        environment :
+          - VIRTUAL_HOST=opencvapp.local
+
+    opencvapp2:
+        depends_on:
+            - reverseproxy
+        build: .
+        environment :
+           - VIRTUAL_HOST=opencvapp.local
+
+    opencvapp3:
+        depends_on:
+            - reverseproxy
+        build: .
+        environment :
+           - VIRTUAL_HOST=opencvapp.local
+
+    opencvapp4:
+        depends_on:
+            - reverseproxy
+        build: .
+        environment :
+          - VIRTUAL_HOST=opencvapp.local
